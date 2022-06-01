@@ -5,7 +5,6 @@
 package src.contactosgui;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -15,10 +14,8 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
+
 
 
 /**
@@ -53,16 +50,18 @@ public class Interfaz extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(500, 700));
         setResizable(false);
         setSize(new java.awt.Dimension(500, 700));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(40, 48, 64));
         jPanel2.setPreferredSize(new java.awt.Dimension(600, 700));
 
+        jButton1.setBackground(new java.awt.Color(163, 191, 217));
         jButton1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton1.setText("Crear");
+        jButton1.setText("Nuevo Contacto");
+        jButton1.setActionCommand("crear");
         jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
         jButton1.setPreferredSize(new java.awt.Dimension(60, 30));
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -70,9 +69,11 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(40, 48, 64));
         jPanel1.setLayout(new java.awt.GridLayout(7, 0, 0, 5));
 
+        jTextField1.setBackground(new java.awt.Color(40, 48, 64));
+        jTextField1.setForeground(new java.awt.Color(163, 191, 217));
         jTextField1.setBorder(null);
         jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jTextField1.setHighlighter(null);
@@ -83,35 +84,37 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(163, 191, 217));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(163, 191, 217));
         jLabel1.setText("Bienvenido a tus contactos Ecomun");
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(163, 191, 217));
         jLabel2.setText("Digite el nombre del contacto:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(100, 100, 100))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jLabel1)
-                .addGap(40, 40, 40))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(100, 100, 100))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(40, 40, 40))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(185, 185, 185))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,9 +129,9 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -148,16 +151,17 @@ public class Interfaz extends javax.swing.JFrame {
     private void crearPanelContacto(Contacto cont){
         
         JPanel panel = new JPanel();
-        panel.setBorder(BorderFactory.createLineBorder(Color.black,1));
+        panel.setBorder(BorderFactory.createLineBorder(new java.awt.Color(163,191,217),1));
         
         Insets ins = new Insets(0,10,0,0);
         
-        panel.setBackground(Color.white);
+        panel.setBackground(new java.awt.Color(40, 48, 64));
         panel.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
 
         
         JLabel nombre = new JLabel(cont.getNombre());
+        nombre.setForeground(new java.awt.Color(163,191,217));
         c.weightx = 0.5;
         c.gridx = 0;
         c.gridy = 0;
@@ -173,7 +177,7 @@ public class Interfaz extends javax.swing.JFrame {
         c.gridy = 0;
         c.anchor = GridBagConstraints.LINE_END;
         editar.setBackground(Color.white);
-        editar.setBorder(BorderFactory.createLineBorder(Color.white,4));
+        editar.setBorder(BorderFactory.createLineBorder((new java.awt.Color(40,48,64)),4));
         editar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
       
         panel.add(editar, c);
@@ -188,7 +192,7 @@ public class Interfaz extends javax.swing.JFrame {
        
         c.anchor = GridBagConstraints.LINE_END;
         eliminar.setBackground(Color.white);
-        eliminar.setBorder(BorderFactory.createLineBorder(Color.white,4));
+        eliminar.setBorder(BorderFactory.createLineBorder((new java.awt.Color(40,48,64)),4));
         eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panel.add(eliminar, c);
         
