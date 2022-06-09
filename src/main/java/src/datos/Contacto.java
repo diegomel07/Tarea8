@@ -4,11 +4,13 @@
  */
 package src.datos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author dimel
  */
-public class Contacto {
+public class Contacto implements Serializable{
     private String nombre;
     private String numero;
     private String correo;

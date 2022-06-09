@@ -10,7 +10,7 @@ import src.datos.*;
  *
  * @author dimel
  */
-public class EditarContacto extends javax.swing.JFrame {
+public class VerContactos extends javax.swing.JFrame {
 
     /**
      * Creates new form EditarContacto
@@ -18,7 +18,7 @@ public class EditarContacto extends javax.swing.JFrame {
     
     private Contacto cont;
     
-    public EditarContacto(Contacto cont) {
+    public VerContactos(Contacto cont) {
         this.cont = cont;
         initComponents();    
     }
@@ -60,9 +60,9 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(40, 48, 64));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 700));
 
-        jButton1.setBackground(new java.awt.Color(173, 162, 242));
+        jButton1.setBackground(new java.awt.Color(242, 73, 73));
         jButton1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jButton1.setText("Guardar");
+        jButton1.setText("Cerrar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton1MousePressed(evt);
@@ -78,8 +78,9 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
 
         jTextField1.setBackground(new java.awt.Color(40, 48, 64));
+        jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(173, 162, 242));
+        jTextField1.setForeground(new java.awt.Color(242, 73, 73));
         jTextField1.setText(cont.getNombre());
         jTextField1.setBorder(null);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -94,8 +95,9 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel3.add(jTextField1, gridBagConstraints);
 
         jTextField2.setBackground(new java.awt.Color(40, 48, 64));
+        jTextField2.setEditable(false);
         jTextField2.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(173, 162, 242));
+        jTextField2.setForeground(new java.awt.Color(242, 73, 73));
         jTextField2.setText(cont.getEmpresa());
         jTextField2.setBorder(null);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -108,8 +110,9 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel3.add(jTextField2, gridBagConstraints);
 
         jTextField3.setBackground(new java.awt.Color(40, 48, 64));
+        jTextField3.setEditable(false);
         jTextField3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(173, 162, 242));
+        jTextField3.setForeground(new java.awt.Color(242, 73, 73));
         jTextField3.setText(cont.getNumero());
         jTextField3.setBorder(null);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -122,8 +125,9 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel3.add(jTextField3, gridBagConstraints);
 
         jTextField4.setBackground(new java.awt.Color(40, 48, 64));
+        jTextField4.setEditable(false);
         jTextField4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(173, 162, 242));
+        jTextField4.setForeground(new java.awt.Color(242, 73, 73));
         jTextField4.setText(cont.getDireccion());
         jTextField4.setBorder(null);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -136,8 +140,9 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel3.add(jTextField4, gridBagConstraints);
 
         jTextField5.setBackground(new java.awt.Color(40, 48, 64));
+        jTextField5.setEditable(false);
         jTextField5.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(173, 162, 242));
+        jTextField5.setForeground(new java.awt.Color(242, 73, 73));
         jTextField5.setText(cont.getCorreo());
         jTextField5.setBorder(null);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -150,7 +155,7 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel3.add(jTextField5, gridBagConstraints);
 
         jLabel6.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(173, 162, 242));
+        jLabel6.setForeground(new java.awt.Color(242, 73, 73));
         jLabel6.setText("Nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -159,7 +164,7 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel3.add(jLabel6, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(173, 162, 242));
+        jLabel7.setForeground(new java.awt.Color(242, 73, 73));
         jLabel7.setText("Empresa:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -168,7 +173,7 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel3.add(jLabel7, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(173, 162, 242));
+        jLabel8.setForeground(new java.awt.Color(242, 73, 73));
         jLabel8.setText("Dirección:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -177,7 +182,7 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel3.add(jLabel8, gridBagConstraints);
 
         jLabel9.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(173, 162, 242));
+        jLabel9.setForeground(new java.awt.Color(242, 73, 73));
         jLabel9.setText("Número:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -186,7 +191,7 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel3.add(jLabel9, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(173, 162, 242));
+        jLabel10.setForeground(new java.awt.Color(242, 73, 73));
         jLabel10.setText("Correo:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -194,7 +199,7 @@ public class EditarContacto extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_END;
         jPanel3.add(jLabel10, gridBagConstraints);
 
-        jSeparator7.setForeground(new java.awt.Color(173, 162, 242));
+        jSeparator7.setForeground(new java.awt.Color(242, 73, 73));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 3;
@@ -202,7 +207,7 @@ public class EditarContacto extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel3.add(jSeparator7, gridBagConstraints);
 
-        jSeparator8.setForeground(new java.awt.Color(173, 162, 242));
+        jSeparator8.setForeground(new java.awt.Color(242, 73, 73));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 5;
@@ -210,7 +215,7 @@ public class EditarContacto extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel3.add(jSeparator8, gridBagConstraints);
 
-        jSeparator9.setForeground(new java.awt.Color(173, 162, 242));
+        jSeparator9.setForeground(new java.awt.Color(242, 73, 73));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 7;
@@ -218,7 +223,7 @@ public class EditarContacto extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel3.add(jSeparator9, gridBagConstraints);
 
-        jSeparator10.setForeground(new java.awt.Color(173, 162, 242));
+        jSeparator10.setForeground(new java.awt.Color(242, 73, 73));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 9;
@@ -226,7 +231,7 @@ public class EditarContacto extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         jPanel3.add(jSeparator10, gridBagConstraints);
 
-        jSeparator11.setForeground(new java.awt.Color(173, 162, 242));
+        jSeparator11.setForeground(new java.awt.Color(242, 73, 73));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 1;
@@ -235,8 +240,8 @@ public class EditarContacto extends javax.swing.JFrame {
         jPanel3.add(jSeparator11, gridBagConstraints);
 
         jLabel11.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(173, 162, 242));
-        jLabel11.setText("Editar Contacto");
+        jLabel11.setForeground(new java.awt.Color(242, 73, 73));
+        jLabel11.setText("Ver Contacto");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -281,23 +286,10 @@ public class EditarContacto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    // Al presionar el boton envia los datos para que el contacto sea editado
-    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
-        // TODO add your handling code here:
 
-        Serializando.editandoContacto(this.cont, new Contacto(
-            jTextField1.getText().strip(),
-            jTextField3.getText().strip(),
-            jTextField5.getText().strip(),
-            jTextField2.getText().strip(),
-            jTextField4.getText().strip()
-            ));
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         
-        Interfaz.recargar();
         this.dispose();
-        
-        JOptionPane.showMessageDialog(this, "Contacto editado",
-             "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton1MousePressed
     
     /**
@@ -327,3 +319,4 @@ public class EditarContacto extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
+
