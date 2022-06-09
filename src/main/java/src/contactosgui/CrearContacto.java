@@ -5,7 +5,7 @@
 package src.contactosgui;
 
 import javax.swing.JOptionPane;
-import src.datos.Contacto;
+import src.datos.*;
 
 /**
  *
@@ -298,18 +298,20 @@ public class CrearContacto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Al presionar el boton envia los datos para el contacto sea creado
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         // TODO add your handling code here:
-        Interfaz.setNuevoContacto(new Contacto(
+            Serializando.manejandoContacto(new Contacto(
                 jTextField1.getText().strip(),
                 jTextField3.getText().strip(),
                 jTextField5.getText().strip(),
                 jTextField2.getText().strip(),
                 jTextField4.getText().strip()
-        ));
+        ), "crear");
         
         this.dispose();
         Interfaz.recargar();
+
         JOptionPane.showMessageDialog(this, "Contacto creado",
              "Confirmación", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton1MousePressed

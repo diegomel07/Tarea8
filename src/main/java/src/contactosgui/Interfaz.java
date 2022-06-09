@@ -4,13 +4,14 @@
  */
 package src.contactosgui;
 
+import src.datos.*;
+import java.util.ArrayList;
+
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import javax.swing.JButton;
-import src.datos.*;
-import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -148,6 +149,7 @@ public class Interfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+    // Creando los paneles en donde se visualizan los contactos y las opciones de manejo (editar y borrar)
     private void crearPanelContacto(Contacto cont){
         
         JPanel panel = new JPanel();
@@ -167,11 +169,13 @@ public class Interfaz extends javax.swing.JFrame {
         c.gridy = 0;
         c.insets = ins;
         c.anchor = GridBagConstraints.LINE_START;
+        nombre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panel.add(nombre, c);
         
         
+        
         JButton editar = new JButton();
-        editar.setIcon(new javax.swing.ImageIcon("C:\\Users\\dimel\\OneDrive\\Documentos\\NetBeansProjects\\ContactosGui\\src\\main\\java\\src\\images\\icons8-edit-24.png"));
+        editar.setIcon(new javax.swing.ImageIcon(getClass().getResource(("/src/contactosgui/icons8-edit-24.png"))));
         c.weightx = 0.1;
         c.gridx = 1;
         c.gridy = 0;
@@ -185,7 +189,7 @@ public class Interfaz extends javax.swing.JFrame {
       
         
         JButton eliminar = new JButton();
-        eliminar.setIcon(new javax.swing.ImageIcon("C:\\Users\\dimel\\OneDrive\\Documentos\\NetBeansProjects\\ContactosGui\\src\\main\\java\\src\\images\\icons8-delete-24.png"));
+        eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/contactosgui/icons8-delete-24.png")));
         c.weightx = 0.1;
         c.gridx = 2;
         c.gridy = 0;
@@ -198,10 +202,18 @@ public class Interfaz extends javax.swing.JFrame {
         
         
         // Eventos
+        nombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                new VerContactos(cont).show();
+            }
+        });
+
+        // Evento que crea una nueva pestaña que permite editar un contacto
         editar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                editarContacto(evt, cont);
+                new EditarContacto(cont).show();
             }
         });
         
@@ -218,26 +230,12 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel1.updateUI();
        
     }
-                
-    private void editarContacto(java.awt.event.MouseEvent evt, Contacto cont){
-        new EditarContacto(cont).show();
-    }
-    
+
+
+    // Evento que permite eliminar un contacto
     private void eliminarContacto(java.awt.event.MouseEvent evt, Contacto cont){
-        
-        int r = -1;
-        
-        for (Contacto c : datos){
-            if (c.getNombre().equals(cont.getNombre())){
-                r = datos.indexOf(c);
-            }
-        }
-        
-        try {
-            datos.remove(r);
-        } catch(Exception e){
-            
-        }
+
+        Serializando.manejandoContacto(cont, "borrar");
         
         recargar();
         
@@ -249,6 +247,8 @@ public class Interfaz extends javax.swing.JFrame {
     
    
     public static void recargar(){
+        // Recargando la interfaz principal, para poder actualizar los datos
+
         jPanel1.removeAll();
         jPanel1.invalidate();
         jPanel1.validate();
@@ -263,15 +263,11 @@ public class Interfaz extends javax.swing.JFrame {
     
     private String substr = "";
     
-    static private ArrayList<Contacto> datos = Ejemplo.contactos();
-    
-    public static void setNuevoContacto(Contacto cont){
-        datos.add(cont);
-    }
-    
+    // Sistema de busueda de contactos
     private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
-        // TODO add your handling code here:
-        
+
+        ArrayList<Contacto> contactosActuales = Serializando.cargandoContactos();
+
         
         jPanel1.setVisible(true);
         jPanel1.removeAll();
@@ -290,9 +286,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         }
         
-        for (Contacto cont: datos){
+        for (Contacto cont: contactosActuales){
             if (cont.getNombre().toLowerCase().contains(substr.toLowerCase()) && !(substr.equals(""))){
-                
                 crearPanelContacto(cont);
             }
         }
@@ -303,6 +298,7 @@ public class Interfaz extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTextField1KeyPressed
 
+    // Evento que crea una nueva pestaña que permite crear un nuevo contacto
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         // TODO add your handling code here:
         new CrearContacto().show();
